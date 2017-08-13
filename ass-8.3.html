@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+      <meta charset = "utf-8">
+      <title>Tooltip functionality</title>
+	     <script src="jquery-1.11.2.js"></script>
+	    <link href = "jquery-ui.css"rel = "stylesheet">
+            <!--fetching jquery-->
+	   <script src="jquery-ui.js"></script>
+	   <script type="text/javascript">
+         // defining tooltip
+         $(document).ready(function() {
+			 $('#txtName').tooltip();
+			 $('#Number').tooltip({
+                content: getToolTipData,
+				track:true,
+				show:{delay:10,duration:500,effect:'slideDown'},
+				hide:{delay:10,duration:500,effect:'explode'}
+				});
+		          function getToolTipData()
+		        {
+			       return'ToolTip from a function';
+		         }
+              });
+       </script>
+    </head>
+   
+    <body style="font-family:Arial;">
+	  <!-- form content-->
+      <form id="form1 ">
+      <label  id="labelName" for = "txtName">Name:</label> <br>
+      <input id = "txtName" type="text"  size="30" title = "Enter You Name" />
+	   <br>
+      <label  id="Number" for = "Number">Number:</label> <br>
+      <input id = "Number" type="numeric" size="30" title = "Enter You number" />
+     </form>
+   </body>
+</html>
